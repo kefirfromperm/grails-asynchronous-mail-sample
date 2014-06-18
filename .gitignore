@@ -28,3 +28,11 @@
 
 # "temporary" build files
 /target
+
+# Unused grails files
+.classpath
+.project
+
+# JetBrains IntelliJ IDEA files
+.idea/
+*.iml
