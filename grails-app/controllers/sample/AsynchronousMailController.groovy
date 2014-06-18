@@ -1,3 +1,5 @@
+package sample
+
 import grails.plugin.asyncmail.AsynchronousMailMessage
 import grails.plugin.asyncmail.MessageStatus
 
