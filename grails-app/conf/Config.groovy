@@ -118,4 +118,17 @@ log4j = {
            'org.springframework',
            'org.hibernate',
            'net.sf.ehcache.hibernate'
+
+    // Enable the Asynchronous Mail plugin logging
+    trace 'grails.app.jobs.grails.plugin.asyncmail', 'grails.app.services.grails.plugin.asyncmail'
+
+    // Enable the Quartz plugin logging
+    debug 'grails.plugins.quartz'
+}
+
+grails {
+    mail {
+        host = "127.0.0.1"
+        props=["mail.transport.protocol":"smtp"]
+    }
 }
