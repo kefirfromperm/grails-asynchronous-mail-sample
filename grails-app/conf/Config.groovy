@@ -1,3 +1,4 @@
+import org.apache.log4j.Level;
 // locations to search for config files that get merged into the main config;
 // config files can be ConfigSlurper scripts, Java properties files, or classes
 // in the classpath in ConfigSlurper format
@@ -120,10 +121,12 @@ log4j = {
            'net.sf.ehcache.hibernate'
 
     // Enable the Asynchronous Mail plugin logging
-    trace 'grails.app.jobs.grails.plugin.asyncmail', 'grails.app.services.grails.plugin.asyncmail'
+    trace   'grails.app.jobs.grails.plugin.asyncmail',
+            'grails.app.services.grails.plugin.asyncmail',
+            'grails.plugin.asyncmail'
 
     // Enable the Quartz plugin logging
-    debug 'grails.plugins.quartz'
+    debug   'grails.plugins.quartz'
 }
 
 grails {
