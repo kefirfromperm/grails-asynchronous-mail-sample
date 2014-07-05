@@ -7,7 +7,7 @@ grails.project.target.level = 1.6
 grails.project.source.level = 1.6
 //grails.project.war.file = "target/${appName}-${appVersion}.war"
 
-grails.plugin.location."asynchronous-mail" = '../grails-asynchronous-mail'
+//grails.plugin.location."asynchronous-mail" = '../grails-asynchronous-mail'
 
 grails.project.fork = [
     // configure settings for compilation JVM, note that if you alter the Groovy version forked compilation is required
@@ -61,6 +61,7 @@ grails.project.dependency.resolution = {
         // plugins for the compile step
         compile ":scaffolding:2.0.3"
         compile ':cache:1.1.2'
+        compile ':asynchronous-mail:1.1-RC'
 
         // plugins needed at runtime but not for compilation
         //runtime ":hibernate:3.6.10.15" // or ":hibernate4:4.3.5.2"
