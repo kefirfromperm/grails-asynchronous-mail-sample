@@ -8,6 +8,6 @@ asynchronous.mail.override = true
 asynchronous.mail.clear.after.sent = false
 asynchronous.mail.disable = false
 asynchronous.mail.useFlushOnSave = true
-asynchronous.mail.useMongo = true
+asynchronous.mail.persistence.provider='hibernate'      // Possible values are 'hibernate', 'hibernate4', 'mongodb'
 asynchronous.mail.gparsPoolSize = 1
 asynchronous.mail.newSessionOnImmediateSend = false
