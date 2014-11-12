@@ -56,12 +56,12 @@ grails.project.dependency.resolution = {
 
     plugins {
         // plugins for the build system only
-        build ":tomcat:7.0.53"
+        build ":tomcat:7.0.54"
 
         // plugins for the compile step
         compile ":scaffolding:2.0.3"
         compile ':cache:1.1.2'
-        compile ':asynchronous-mail:1.1'
+        compile ':asynchronous-mail:1.2-RC'
 
         // plugins needed at runtime but not for compilation
         //runtime ":hibernate:3.6.10.15" // or ":hibernate4:4.3.5.2"
