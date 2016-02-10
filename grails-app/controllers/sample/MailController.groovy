@@ -1,11 +1,15 @@
 package sample
 
+import grails.plugin.asyncmail.AsynchronousMailService
+
 class MailController {
+    AsynchronousMailService asynchronousMailService;
+
 
     def index() {}
 
     def send(){
-        sendMail {
+        asynchronousMailService.sendAsynchronousMail {
             from params.from
             to params.to
             subject params.subject
