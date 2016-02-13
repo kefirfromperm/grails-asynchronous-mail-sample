@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <asset:stylesheet src="application.css"/>
+    <asset:stylesheet src="asyncmail.css"/>
     <title>Show Asynchronous Mail Message</title>
 </head>
 
@@ -12,7 +12,7 @@
 
 <%-- Navigation --%>
 <div class="nav">
-    <span class="menuButton"><a class="home" href="${resource(dir: '')}">Home</a></span>
+    <span class="menuButton"><g:link class="home" uri="/">Home</g:link></span>
     <span class="menuButton"><g:link class="list" action="list">List</g:link></span>
 </div>
 
