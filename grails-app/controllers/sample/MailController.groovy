@@ -8,7 +8,7 @@ class MailController {
     def index() {}
 
     def send(){
-        asyncMailService.sendAsynchronousMail {
+        asyncMailService.sendMail {
             from params.from
             to params.to
             subject params.subject
