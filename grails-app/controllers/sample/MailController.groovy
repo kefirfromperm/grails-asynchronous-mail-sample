@@ -3,13 +3,12 @@ package sample
 import grails.plugin.asyncmail.AsynchronousMailService
 
 class MailController {
-    AsynchronousMailService asynchronousMailService;
-
+    AsynchronousMailService asyncMailService;
 
     def index() {}
 
     def send(){
-        asynchronousMailService.sendAsynchronousMail {
+        asyncMailService.sendAsynchronousMail {
             from params.from
             to params.to
             subject params.subject
