@@ -17,41 +17,17 @@ dataSource{
 
 environments{
     development{
-        dataSource{
-            dbCreate = 'create-drop'
-            url = 'jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE'
-		}
+        mongodb {
+            host = "localhost"
+            port = 27017
+//            username = "blah"
+//            password = "blah"
+//            databaseName = "foo"
+        }
 	}
     test{
-        dataSource{
-            dbCreate = 'update'
-            url = 'jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE'
-		}
 	}
     production{
-        dataSource{
-            dbCreate = 'update'
-            url = 'jdbc:h2:./prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE'
-            properties{
-                jmxEnabled = true
-                initialSize = 5
-                maxActive = 50
-                minIdle = 5
-                maxIdle = 25
-                maxWait = 10000
-                maxAge = 600000
-                timeBetweenEvictionRunsMillis = 5000
-                minEvictableIdleTimeMillis = 60000
-                validationQuery = 'SELECT 1'
-                validationQueryTimeout = 3
-                validationInterval = 15000
-                testOnBorrow = true
-                testWhileIdle = true
-                testOnReturn = false
-                jdbcInterceptors = 'ConnectionState'
-                defaultTransactionIsolation = 2 // TRANSACTION_READ_COMMITTED
-			}
-		}
 	}
 }
 
@@ -128,7 +104,7 @@ asynchronous.mail.override = true
 asynchronous.mail.clear.after.sent = false
 asynchronous.mail.disable = false
 asynchronous.mail.useFlushOnSave = true
-asynchronous.mail.persistence.provider='hibernate'      // Possible values are 'hibernate', 'hibernate4', 'mongodb'
+asynchronous.mail.persistence.provider='mongodb'      // Possible values are 'hibernate', 'hibernate4', 'mongodb'
 asynchronous.mail.gparsPoolSize = 1
 asynchronous.mail.newSessionOnImmediateSend = false
 
