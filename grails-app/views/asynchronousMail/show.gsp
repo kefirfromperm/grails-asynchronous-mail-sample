@@ -1,8 +1,8 @@
-<%@ page import="grails.plugin.asyncmail.MessageStatus; grails.plugin.asyncmail.MessageStatus; grails.plugin.asyncmail.MessageStatus; grails.plugin.asyncmail.MessageStatus; grails.plugin.asyncmail.MessageStatus; grails.plugin.asyncmail.AsynchronousMailMessage" %>
+<%@ page import="grails.plugin.asyncmail.enums.MessageStatus; grails.plugin.asyncmail.AsynchronousMailMessage" %>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link rel="stylesheet" href="${resource(dir: 'css', file: 'asyncmail.css', plugin: 'asynchronous-mail')}"/>
+    <asset:stylesheet src="asyncmail.css"/>
     <title>Show Asynchronous Mail Message</title>
 </head>
 
@@ -12,7 +12,7 @@
 
 <%-- Navigation --%>
 <div class="nav">
-    <span class="menuButton"><a class="home" href="${resource(dir: '')}">Home</a></span>
+    <span class="menuButton"><g:link class="home" uri="/">Home</g:link></span>
     <span class="menuButton"><g:link class="list" action="list">List</g:link></span>
 </div>
 
