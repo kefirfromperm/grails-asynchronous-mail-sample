@@ -1,6 +1,6 @@
 language: groovy
 jdk:
-- openjdk8
+- oracljdk8
 before_install:
 - chmod +x gradlew
 before_script:
