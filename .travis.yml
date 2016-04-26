@@ -3,6 +3,7 @@ jdk:
 - oraclejdk8
 before_install:
 - chmod +x gradlew
+- chmod +x travi-build.sh
 before_script:
 - rm -rf target
 script: ./travis-build.sh
