@@ -1,7 +1,7 @@
 Grails Asynchronous Mail Sample
 ===============================
 
-[![Build Status](https://travis-ci.org/kefirfromperm/grails-asynchronous-mail-sample.svg?branch=master)](https://travis-ci.org/kefirfromperm/grails-asynchronous-mail-sample)
+[![Build Status](https://travis-ci.org/kefirfromperm/grails-asynchronous-mail-sample.svg?branch=mongodb)](https://travis-ci.org/kefirfromperm/grails-asynchronous-mail-sample)
 
 The sample application for the Grails Asynchronous Mail plugin.
 
