@@ -1,0 +1,14 @@
+language: groovy
+jdk:
+- oraclejdk8
+before_install:
+- chmod +x gradlew
+- chmod +x travis-build.sh
+before_script:
+- rm -rf target
+script: ./travis-build.sh
+env:
+  global:
+  - GIT_NAME="Vitalii Samolovskikh"
+  - GIT_EMAIL="kefirfromperm@gmail.com"
+
