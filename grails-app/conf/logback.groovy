@@ -38,9 +38,9 @@ if (Environment.isDevelopmentMode() && targetDir != null) {
 }
 
 // Enable Asynchronous Mail plugin logging
-logger('grails.app.jobs.grails.plugin.asyncmail', TRACE, ['STDOUT'])
-logger('grails.app.services.grails.plugin.asyncmail', TRACE, ['STDOUT'])
-logger('grails.plugin.asyncmail', TRACE, ['STDOUT'])
+logger('grails.app.jobs.grails.plugin.asyncmail', TRACE, ['STDOUT'], false)
+logger('grails.app.services.grails.plugin.asyncmail', TRACE, ['STDOUT'], false)
+logger('grails.plugin.asyncmail', TRACE, ['STDOUT'], false)
 
 // Enable Quartz plugin logging
-logger('grails.plugins.quartz', DEBUG, ['STDOUT'])
+logger('grails.plugins.quartz', DEBUG, ['STDOUT'], false)

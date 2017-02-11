@@ -120,21 +120,43 @@ asynchronous.mail.persistence.provider='hibernate'      // Possible values are '
 asynchronous.mail.gparsPoolSize = 1
 asynchronous.mail.newSessionOnImmediateSend = false
 
-quartz {
-    autoStartup = true
-    jdbcStore = true
-    waitForJobsToCompleteOnShutdown = true
-    exposeSchedulerInRepository = false
-
-    props {
-        scheduler.skipUpdateCheck = true
-    }
-}
 
 environments {
     test {
         quartz {
             autoStartup = false
+        }
+    }
+    production {
+        quartz {
+            autoStartup = true
+            jdbcStore = true
+            waitForJobsToCompleteOnShutdown = true
+            exposeSchedulerInRepository = false
+
+            props {
+                scheduler.skipUpdateCheck = true
+            }
+
+            scheduler.instanceName = 'clustering_quartz'
+            scheduler.instanceId = 'AUTO'
+
+            threadPool.class = 'org.quartz.simpl.SimpleThreadPool'
+            threadPool.threadCount = 5
+            threadPool.threadPriority = 5
+
+            jobStore.misfireThreshold = 60000
+
+            jobStore.class = 'org.quartz.impl.jdbcjobstore.JobStoreTX'
+            jobStore.driverDelegateClass = 'org.quartz.impl.jdbcjobstore.PostgreSQLDelegate'
+
+            jobStore.useProperties = false
+            jobStore.tablePrefix = 'QRTZ_'
+            jobStore.isClustered = true
+            jobStore.clusterCheckinInterval = 5000
+
+            plugin.shutdownhook.class = 'org.quartz.plugins.management.ShutdownHookPlugin'
+            plugin.shutdownhook.cleanShutdown = true
         }
     }
 }
