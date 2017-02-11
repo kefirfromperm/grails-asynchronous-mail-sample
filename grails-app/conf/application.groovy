@@ -9,48 +9,36 @@ hibernate{
 
 dataSource{
     pooled = true
-    jmxExport = true
-    driverClassName = "org.h2.Driver"
-    username = "sa"
-    password = ""
 }
 
 environments{
     development{
         dataSource{
+            jmxExport = true
+            driverClassName = "org.h2.Driver"
+            username = "sa"
+            password = ""
             dbCreate = 'create-drop'
             url = 'jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE'
 		}
 	}
     test{
         dataSource{
+            jmxExport = true
+            driverClassName = "org.h2.Driver"
+            username = "sa"
+            password = ""
             dbCreate = 'update'
             url = 'jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE'
 		}
 	}
     production{
         dataSource{
-            dbCreate = 'update'
-            url = 'jdbc:h2:./prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE'
-            properties{
-                jmxEnabled = true
-                initialSize = 5
-                maxActive = 50
-                minIdle = 5
-                maxIdle = 25
-                maxWait = 10000
-                maxAge = 600000
-                timeBetweenEvictionRunsMillis = 5000
-                minEvictableIdleTimeMillis = 60000
-                validationQuery = 'SELECT 1'
-                validationQueryTimeout = 3
-                validationInterval = 15000
-                testOnBorrow = true
-                testWhileIdle = true
-                testOnReturn = false
-                jdbcInterceptors = 'ConnectionState'
-                defaultTransactionIsolation = 2 // TRANSACTION_READ_COMMITTED
-			}
+            driverClassName = "org.postgresql.Driver"
+            username = "postgres"
+            password = "postgres"
+            dbCreate = "update" // one of 'create', 'create-drop','update'
+            url = "jdbc:postgresql://localhost:5432/gamcs"
 		}
 	}
 }
@@ -132,4 +120,21 @@ asynchronous.mail.persistence.provider='hibernate'      // Possible values are '
 asynchronous.mail.gparsPoolSize = 1
 asynchronous.mail.newSessionOnImmediateSend = false
 
-quartz.jdbcStore = false
+quartz {
+    autoStartup = true
+    jdbcStore = true
+    waitForJobsToCompleteOnShutdown = true
+    exposeSchedulerInRepository = false
+
+    props {
+        scheduler.skipUpdateCheck = true
+    }
+}
+
+environments {
+    test {
+        quartz {
+            autoStartup = false
+        }
+    }
+}
