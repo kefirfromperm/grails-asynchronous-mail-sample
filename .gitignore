@@ -36,3 +36,7 @@
 # JetBrains IntelliJ IDEA files
 .idea/
 *.iml
+
+#Gradle
+build
+.asscache

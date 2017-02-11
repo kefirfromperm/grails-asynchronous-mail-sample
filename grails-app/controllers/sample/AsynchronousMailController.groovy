@@ -2,7 +2,7 @@ package sample
 
 
 import grails.plugin.asyncmail.AsynchronousMailMessage
-import grails.plugin.asyncmail.MessageStatus
+import grails.plugin.asyncmail.enums.MessageStatus
 
 class AsynchronousMailController {
     static defaultAction = 'list'
