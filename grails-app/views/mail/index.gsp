@@ -11,7 +11,7 @@
 
 <%-- Navigation --%>
 <div class="nav">
-    <span class="menuButton"><a class="home" href="${resource(dir: '')}">Home</a></span>
+    <span class="menuButton"><g:link class="home" uri="/">Home</g:link></span>
     <span class="menuButton"><g:link class="list" controller="asynchronousMail" action="list">List</g:link></span>
 </div>
 
