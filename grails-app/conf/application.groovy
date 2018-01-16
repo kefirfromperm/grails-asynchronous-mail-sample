@@ -3,7 +3,6 @@ hibernate{
         queries = false
         use_second_level_cache = true
         use_query_cache = false
-        region.factory_class = 'org.hibernate.cache.ehcache.EhCacheRegionFactory'
 	}
 }
 
@@ -58,7 +57,8 @@ environments{
 grails{
     profile = 'web'
     codegen.defaultPackage = 'sample'
-    spring.transactionManagement = false
+    spring.transactionManagement.proxies = false
+    gorm.reactor.events = false
 }
 info{
     app{
@@ -67,12 +67,15 @@ info{
         grailsVersion = '@info.app.grailsVersion@'
 	}
 }
-spring.groovy.template.'check-template-location' = false
+spring {
+    main.'banner-mode' = 'off'
+    groovy.template.'check-template-location' = false
+}
 
-grails{
-    mime{
+grails {
+    mime {
         disable.accept.header.userAgents = ['Gecko','WebKit','Presto','Trident']
-        types{
+        types {
             all = '*/*'
             atom = 'application/atom+xml'
             css = 'text/css'
@@ -92,14 +95,14 @@ grails{
     urlmapping.cache.maxsize = 1000
     controllers.defaultScope = 'singleton'
     converters.encoding = 'UTF-8'
-    views{
-        'default'{
+    views {
+        'default' {
             codec = 'html'
 		}
         gsp{
             encoding = 'UTF-8'
             htmlcodec = 'xml'
-            codecs{
+            codecs {
                 expression = 'html'
                 scriptlets = 'html'
                 taglib = 'none'
@@ -109,7 +112,10 @@ grails{
 	}
 }
 
-endpoints.jmx.'unique-names' = true
+endpoints {
+    enabled = false
+    jmx.enabled = true
+}
 
 grails {
     mail {
