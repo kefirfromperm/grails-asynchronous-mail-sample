@@ -54,7 +54,7 @@ dependencies {
     testCompile "org.grails:grails-gorm-testing-support"
     testCompile "org.grails:grails-web-testing-support"
 
-    compile "org.grails.plugins:asynchronous-mail:2.0.1-SNAPSHOT"
+    compile "org.grails.plugins:asynchronous-mail:2.0.1"
     compile "org.postgresql:postgresql:42.2.0"
 }
 
